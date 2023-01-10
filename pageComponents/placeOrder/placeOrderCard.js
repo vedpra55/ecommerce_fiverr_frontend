@@ -12,7 +12,7 @@ export default function PlaceOrderCard({ cartItem, cartTotal, user }) {
   const [clicked, setClicked] = useState(false);
 
   const { createOrder } = useCreateOrder();
-  const URL = "http://localhost:4000/api/order/getQiwiBill";
+  const URL = `${process.env.NEXT_PUBLIC_BACKEND_URL}/order/getQiwiBill`;
 
   async function handlePlaceOrder() {
     const data = {

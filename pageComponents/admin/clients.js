@@ -43,7 +43,7 @@ export default function Clients({ user }) {
   ];
 
   async function fetchAllUsers() {
-    const URL = `http://localhost:4000/api/account/allUsers?uid=${user._id}`;
+    const URL = `${process.env.NEXT_PUBLIC_BACKEND_URL}/account/allUsers?uid=${user._id}`;
     const res = await fetch(URL);
     return res.json();
   }

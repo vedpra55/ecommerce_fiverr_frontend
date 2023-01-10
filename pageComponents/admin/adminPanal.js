@@ -4,7 +4,7 @@ import useSwr from "swr";
 
 export default function AdminPanal({ user }) {
   async function fetchAllOrders() {
-    const URL = `http://localhost:4000/api/order/adminOrders?uid=${user._id}`;
+    const URL = `${process.env.NEXT_PUBLIC_BACKEND_URL}/order/adminOrders?uid=${user._id}`;
     const res = await fetch(URL);
     return res.json();
   }

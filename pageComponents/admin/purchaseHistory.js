@@ -37,7 +37,7 @@ export default function PurchaseHistory({ user }) {
   ];
 
   async function fetchAllOrders() {
-    const URL = `http://localhost:4000/api/order/allOrders?uid=${user._id}`;
+    const URL = `${process.env.NEXT_PUBLIC_BACKEND_URL}/order/allOrders?uid=${user._id}`;
     const res = await fetch(URL);
     return res.json();
   }

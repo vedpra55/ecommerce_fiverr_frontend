@@ -5,7 +5,7 @@ export const useCreateOrder = () => {
   const [error, setError] = useState(null);
   const [isLoading, setLoading] = useState(null);
 
-  const URL = "http://localhost:4000/api/order/createOrder";
+  const URL = `${process.env.NEXT_PUBLIC_BACKEND_URL}/order/createOrder`;
 
   const createOrder = async (userData) => {
     setLoading(true);

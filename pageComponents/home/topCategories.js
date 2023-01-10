@@ -94,7 +94,7 @@ export default function TopCategories() {
               />
             </div>
             <div className="z-10 absolute inset-0 py-2 md:py-5 gap-y-1 md:gap-y-[15px] flex flex-col text-white justify-end items-start px-2 md:px-[25px] h-full">
-              <h5 className="font-medium text-[18px] md:font-bold lg:text-xl w-full md:w-44 leading-6  md:text-[24px] ">
+              <h5 className=" font-semibold text-[15px]  md:font-bold lg:text-xl w-full md:w-44 leading-6  md:text-[24px] ">
                 {item.name}
               </h5>
               <p className=" opacity-60 text-[13px] md:text-[18px]">

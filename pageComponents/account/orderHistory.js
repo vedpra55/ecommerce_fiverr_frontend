@@ -69,7 +69,7 @@ export default function OrderHistory({ user }) {
 
   async function fetchOrders() {
     const res = await fetch(
-      `http://localhost:4000/api/order/user?uid=${user._id}`
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/order/user?uid=${user._id}`
     );
     return res.json();
   }

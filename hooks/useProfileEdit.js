@@ -6,7 +6,7 @@ export const useProfileEdit = () => {
   const [error, setError] = useState(null);
   const [isLoading, setLoading] = useState(null);
   const { dispatch } = useAuthContext();
-  const URL = "http://localhost:4000/api/account/updateProfile";
+  const URL = `${process.env.NEXT_PUBLIC_BACKEND_URL}/account/updateProfile`;
 
   const profileEdit = async (userData) => {
     setLoading(true);

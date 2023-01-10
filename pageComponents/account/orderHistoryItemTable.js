@@ -5,7 +5,7 @@ export default function OrderHistoryItemTable({ item }) {
   const [isOpen, setOpen] = useState(false);
 
   const createdAt = new Date(item.createdAt);
-  const URL = "http://localhost:4000/api/order/getQiwiBill";
+  const URL = `${process.env.NEXT_PUBLIC_BACKEND_URL}/order/getQiwiBill`;
 
   async function handlePayment() {
     const data = {

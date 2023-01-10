@@ -6,7 +6,7 @@ export const useSignup = () => {
   const [error, setError] = useState(null);
   const [isLoading, setLoading] = useState(null);
   const { dispatch } = useAuthContext();
-  const URL = "http://localhost:4000/api/account/register";
+  const URL = `${process.env.NEXT_PUBLIC_BACKEND_URL}/account/register`;
 
   const signup = async (userData) => {
     setLoading(true);

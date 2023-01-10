@@ -13,7 +13,7 @@ export default function AdminOrderModal({ isOpen, setIsOpen, order, adminId }) {
 
   async function handleShippingDetails() {
     if (statusText) {
-      const URL = "http://localhost:4000/api/order/updateShippingState";
+      const URL = `${process.env.NEXT_PUBLIC_BACKEND_URL}/order/updateShippingState`;
       const data = {
         orderId: order._id,
         uid: adminId,

@@ -22,7 +22,7 @@ export const AuthContextProvider = ({ children }) => {
     user: null,
     isLoading: true,
   });
-  const URL = "http://localhost:4000/api/account/verifyLogedinUser";
+  const URL = `${process.env.NEXT_PUBLIC_BACKEND_URL}/account/verifyLogedinUser`;
 
   useEffect(() => {
     const localUser = JSON.parse(localStorage.getItem("user"));

@@ -97,7 +97,7 @@ export default function AdminUserModal({ isOpen, setIsOpen, user, adminUser }) {
         landMark: data.landMark,
       },
     };
-    const URL = "http://localhost:4000/api/account/adminEditUser";
+    const URL = `${process.env.NEXT_PUBLIC_BACKEND_URL}/account/adminEditUser`;
     const response = await fetch(URL, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
