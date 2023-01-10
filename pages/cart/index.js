@@ -46,10 +46,14 @@ export default function CartPage() {
   const [isOpen, setIsOpen] = useState(false);
 
   function PlaceOrder() {
-    if (!user.address.zipCode) {
-      setIsOpen(true);
+    if (user?.name) {
+      if (!user.address.zipCode) {
+        setIsOpen(true);
+      } else {
+        router.push("/placeOrder");
+      }
     } else {
-      router.push("/placeOrder");
+      router.push("/account");
     }
   }
 
