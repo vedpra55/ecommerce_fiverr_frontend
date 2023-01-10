@@ -8,7 +8,7 @@ export default function SearchBar() {
   const [searchText, setSearchText] = useState("");
 
   const [result, setResult] = useState([]);
-  const URL = "http://localhost:4000/api/products/search";
+  const URL = `${process.env.NEXT_PUBLIC_BACKEND_URL}/products/search`;
 
   async function fetchSearchResult() {
     const data = {
