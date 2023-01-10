@@ -16,9 +16,9 @@ export default function CartButton() {
 
   return (
     <Link href={"/cart"}>
-      <div className="hidden   md:flex items-center gap-x-2">
+      <div className="flex items-center gap-x-2">
         <div
-          className={` text-white linkHover hidden   hover:text-main cursor-pointer md:flex justify-center items-center w-[50px] h-[50px]  bg-[#039BE5] rounded-full  text-3xl `}
+          className={` text-white linkHover    hover:text-main cursor-pointer flex justify-center items-center w-[30px] h-[30px] md:w-[50px] md:h-[50px]  bg-[#039BE5] rounded-full text-xl md:text-3xl `}
         >
           <BsCart4 />
         </div>

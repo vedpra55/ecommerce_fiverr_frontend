@@ -8,7 +8,8 @@ export default function TopCategories() {
   const router = useRouter();
   const data = [
     {
-      imgUrl: "/assets/category1.png",
+      imgUrl:
+        "https://res.cloudinary.com/dtme6qv4c/image/upload/v1673364748/fiverr%20zara/category1.png",
       name: "Men Blazer Zara",
       price: "",
       href: {
@@ -19,7 +20,8 @@ export default function TopCategories() {
     },
 
     {
-      imgUrl: "/assets/category2.png",
+      imgUrl:
+        "https://res.cloudinary.com/dtme6qv4c/image/upload/v1673364748/fiverr%20zara/category2.png",
       name: "H&m Kids",
       price: "376 товара",
       href: {
@@ -29,7 +31,8 @@ export default function TopCategories() {
       },
     },
     {
-      imgUrl: "/assets/category3.png",
+      imgUrl:
+        "https://res.cloudinary.com/dtme6qv4c/image/upload/v1673364748/fiverr%20zara/category3.png",
       name: "Women Jeans Zara",
       price: "376 товара",
       href: {
@@ -39,7 +42,8 @@ export default function TopCategories() {
       },
     },
     {
-      imgUrl: "/assets/category4.png",
+      imgUrl:
+        "https://res.cloudinary.com/dtme6qv4c/image/upload/v1673364748/fiverr%20zara/category4.png",
       name: "Women Dress Zara ",
       price: "376 товара",
       href: {
@@ -49,7 +53,8 @@ export default function TopCategories() {
       },
     },
     {
-      imgUrl: "/assets/category5.png",
+      imgUrl:
+        "https://res.cloudinary.com/dtme6qv4c/image/upload/v1673364748/fiverr%20zara/category5.png",
       name: "Men T-shirt Zara",
       price: "376 товара",
       href: {
@@ -94,12 +99,10 @@ export default function TopCategories() {
               />
             </div>
             <div className="z-10 absolute inset-0 py-2 md:py-5 gap-y-1 md:gap-y-[15px] flex flex-col text-white justify-end items-start px-2 md:px-[25px] h-full">
-              <h5 className=" font-semibold text-[15px]  md:font-bold lg:text-xl w-full md:w-44 leading-6  md:text-[24px] ">
+              <h5 className=" font-semibold text-xs  md:font-bold lg:text-xl w-full md:w-44 leading-6  md:text-[24px] ">
                 {item.name}
               </h5>
-              <p className=" opacity-60 text-[13px] md:text-[18px]">
-                {item.price}
-              </p>
+
               <button
                 onClick={() => handleCatalogNavigation(i)}
                 className="btnHover hover:bg-red-600  active:bg-red-800 lg:w-[172px] lg:h-[44px] flex justify-center items-center bg-main rounded-[90px]   md:w-auto text-[15px] md:text-[16px] px-5 py-1  font-semibold  whitespace-nowrap lg:px-[52px]"
