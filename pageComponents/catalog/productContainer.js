@@ -64,7 +64,7 @@ export default function ProductContainer() {
   );
 
   useEffect(() => {
-    const pageCount = Math.ceil(data?.total / 12);
+    const pageCount = (data?.total / 12).toFixed(0);
     setPageCount(pageCount);
   }, [data]);
 

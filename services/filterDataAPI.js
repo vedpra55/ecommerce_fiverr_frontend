@@ -3,7 +3,7 @@ export async function fetchMainCategoryData(selectedBrand) {
     brand: selectedBrand,
   };
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/mainCategory`,
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/filterData/mainCategory`,
     {
       method: "POST",
       headers: {
@@ -20,16 +20,19 @@ export async function fetchMainCategoryData(selectedBrand) {
 export async function fetchCategoryData(selectedBrand, selectedMainCategory) {
   const data = {
     brand: selectedBrand,
-    gender: selectedMainCategory,
+    mainCategory: selectedMainCategory,
   };
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/categories`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      // 'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: JSON.stringify(data),
-  });
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/filterData/category`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: JSON.stringify(data),
+    }
+  );
   const resData = await res.json();
   return resData;
 }
@@ -42,18 +45,21 @@ export async function fetchSizeData(
 ) {
   const data = {
     brand: selectedBrand,
-    gender: selectedMainCategory,
+    mainCategory: selectedMainCategory,
     category: selectedCategory,
     subCategory: selectedSubCategory.length === 0 ? null : selectedSubCategory,
   };
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/sizes`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      // 'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: JSON.stringify(data),
-  });
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/filterData/size`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: JSON.stringify(data),
+    }
+  );
   const resData = await res.json();
   return resData;
 }
@@ -67,7 +73,7 @@ export async function fetchSubCategoryHMData(
     category: selectedCategory,
   };
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/subCategoryHm`,
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/filterData/subCategoryHM`,
     {
       method: "POST",
       headers: {
