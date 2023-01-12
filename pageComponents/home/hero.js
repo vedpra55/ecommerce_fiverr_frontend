@@ -2,7 +2,6 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { FaTelegramPlane } from "react-icons/fa";
 import { BsPlayFill } from "react-icons/bs";
-import { AiOutlineRight } from "react-icons/ai";
 
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";

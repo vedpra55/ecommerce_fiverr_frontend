@@ -12,6 +12,7 @@ import {
   fetchSingleProduct,
   fetchSimilarProducts,
 } from "../../services/productDataAPI";
+import { Oval } from "react-loader-spinner";
 import ProductImages from "../../pageComponents/productDetails/productImages";
 import ProductInfo from "../../pageComponents/productDetails/productInfo";
 
@@ -26,7 +27,23 @@ export default function ProductDetailsPage() {
     product ? fetchSimilarProducts : null
   );
 
-  if (!product) return null;
+  if (!product)
+    return (
+      <div className="h-96 flex items-center justify-center">
+        <Oval
+          height={80}
+          width={80}
+          color="#1C8BCA"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+          ariaLabel="oval-loading"
+          secondaryColor="#039BE5"
+          strokeWidth={2}
+          strokeWidthSecondary={2}
+        />
+      </div>
+    );
   if (!product?.data) {
     return <div className="h-96 w-full text-center">Something goes wrong</div>;
   }
