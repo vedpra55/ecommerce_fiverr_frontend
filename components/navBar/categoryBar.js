@@ -16,8 +16,8 @@ export default function CategoryBar() {
       href: "brands",
     },
     {
-      name: "Profile",
-      href: "account",
+      name: "Часто задаваемые вопросы",
+      href: "faq",
     },
     {
       name: "Контакты",

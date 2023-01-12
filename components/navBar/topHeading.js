@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 import { FaPhoneVolume, FaUser } from "react-icons/fa";
@@ -6,10 +7,12 @@ export default function TopHeading() {
   const data = [
     {
       name: "Заказать звонок",
+      href: "/contactUs",
       icon: <FaPhoneVolume />,
     },
     {
       name: "Личный кабинет",
+      href: "/account",
       icon: <FaUser />,
     },
   ];
@@ -29,9 +32,11 @@ export default function TopHeading() {
               <div className="w-[24px] h-[24px] flex justify-center items-center bg-[#636679] text-white rounded-full text-xs lg:text-[14px]">
                 {item.icon}
               </div>
-              <p className=" cursor-pointer active:text-[#94D9FF] hover:text-[#039BE5;] hover:underline">
-                {item.name}
-              </p>
+              <Link href={item?.href}>
+                <p className=" cursor-pointer active:text-[#94D9FF] hover:text-[#039BE5;] hover:underline">
+                  {item.name}
+                </p>
+              </Link>
             </div>
           ))}
         </div>

@@ -28,14 +28,7 @@ export default function ProfileEdit({ user }) {
       placeholder: "Номер телефона",
       minLength: 10,
     },
-    {
-      id: 5,
-      name: "password",
-      type: "password",
-      required: true,
-      minLength: 6,
-      placeholder: "Пароль",
-    },
+
     {
       id: 4,
       name: "zipCode",
@@ -87,8 +80,7 @@ export default function ProfileEdit({ user }) {
     const userData = {
       name: data.name,
       sirName: data.sirName,
-      phoneNumber: data.phoneNumber,
-      password: data.password,
+      phoneNumber: parseInt(data.phoneNumber),
       address: {
         zipCode: data.zipCode,
         city: data.city,
@@ -97,7 +89,6 @@ export default function ProfileEdit({ user }) {
       },
       token: user.token,
     };
-    console.log(userData);
     await profileEdit(userData);
   }
 
@@ -119,7 +110,7 @@ export default function ProfileEdit({ user }) {
               {...register(item.name)}
               className=" mt-[10px] h-[55px] accountInput"
               placeholder="Ваше имя"
-              type={"text"}
+              type={item.type}
             />
           </div>
         ))}

@@ -15,14 +15,14 @@ export default function AccountPage() {
   const { isLoading, user } = useAuthContext();
   const { logout } = useLogout();
 
-  if (isLoading === true) return <div>Loading...</div>;
-
   return (
     <main>
       <NavBar />
       <section className="mt-5 mb-[30px] myContainer">
         <Breadcrumbs text={"Хлебные крошки"} />
-        {user ? (
+        {isLoading ? (
+          <div className=" text-center">Loading...</div>
+        ) : user?.name ? (
           <UserDashboard user={user} logout={logout} />
         ) : (
           <UnAuthenticatedProfile
@@ -32,8 +32,12 @@ export default function AccountPage() {
         )}
       </section>
       <Footer />
-      <RegisterModal setIsOpen={setRegisterModal} isOpen={isRegisterModal} />
-      <LoginModal setIsOpen={setLoginModal} isOpen={isLoginModal} />
+      {isRegisterModal && (
+        <RegisterModal setIsOpen={setRegisterModal} isOpen={isRegisterModal} />
+      )}
+      {isLoginModal && (
+        <LoginModal setIsOpen={setLoginModal} isOpen={isLoginModal} />
+      )}
     </main>
   );
 }

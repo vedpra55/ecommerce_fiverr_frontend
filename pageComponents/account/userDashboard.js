@@ -28,10 +28,9 @@ export default function UserDashboard({ user, logout }) {
       <div className="grid mt-5 grid-cols-12 gap-y-10 md:gap-x-10 3xl:gap-x-28 items-start">
         <div className="col-span-12 md:col-span-4 3xl:col-span-3 bg-white w-full h-[105px] lg:w-[300px] flex flex-col justify-center rounded-lg myshadow">
           {tabList.map((item, i) => (
-            <>
+            <React.Fragment key={i}>
               <p
                 onClick={() => setSelectedTab(i)}
-                key={i}
                 className={`px-5 hover:text-main text-[20px] cursor-pointer ${
                   i === selectedTab && "font-semibold"
                 }`}
@@ -39,12 +38,9 @@ export default function UserDashboard({ user, logout }) {
                 {item.name}
               </p>
               {i !== 1 && (
-                <div
-                  key={item.name}
-                  className="my-3 border-[#E4E4E4] border-[1px] w-full"
-                ></div>
+                <div className="my-3 border-[#E4E4E4] border-[1px] w-full"></div>
               )}
-            </>
+            </React.Fragment>
           ))}
         </div>
         {tabList[selectedTab].component}

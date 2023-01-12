@@ -4,6 +4,12 @@ import { FaTelegramPlane } from "react-icons/fa";
 import { BsPlayFill } from "react-icons/bs";
 import { AiOutlineRight } from "react-icons/ai";
 
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 export default function Hero() {
   const [buttonHover, setHover] = useState(false);
 
@@ -27,23 +33,8 @@ export default function Hero() {
               <p>Пример видеоотчета</p>
             </div>
             <p>Топовые бренды:</p>
-            <div className="flex flex-wrap sm:flex-nowrap gap-y-2 gap-x-2 lg:gap-x-5 items-center py-2">
-              {Array.from(Array(3)).map((item, i) => (
-                <div key={i} className="border border-white rounded-md px-5">
-                  <div className=" relative  w-14 h-8 md:w-20 md:h-12 3xl:w-[136px] 3xl:h-[56px]">
-                    <Image
-                      fill
-                      sizes="10vh"
-                      className="w-full h-full object-contain"
-                      alt="brands"
-                      src="/assets/brands.png"
-                    />
-                  </div>
-                </div>
-              ))}
-              <div className="border btnHover hover:text-white cursor-pointer border-main text-main rounded-full p-2">
-                <AiOutlineRight />
-              </div>
+            <div className="flex w-[90%] md:w-96   flex-wrap sm:flex-nowrap gap-y-2 gap-x-2 lg:gap-x-5 items-center py-2">
+              <BrandsSwiper />
             </div>
             <button className="border btnHover  lg:w-[289px] lg:h-[52px] border-main text-white px-10 mt-4 py-2 rounded-[90px]">
               <p className=" font-medium whitespace-nowrap ">
@@ -82,5 +73,35 @@ export default function Hero() {
         </div>
       </div>
     </section>
+  );
+}
+
+function BrandsSwiper() {
+  return (
+    <Swiper
+      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+      spaceBetween={20}
+      slidesPerView={3}
+      navigation
+      loop={true}
+    >
+      {Array.from(Array(10)).map((item, i) => (
+        <SwiperSlide key={i} className="slide">
+          <div className="slide-content">
+            <div className="border border-white rounded-md px-5">
+              <div className=" relative  w-14 h-8 md:w-20 md:h-12 3xl:w-[136px] 3xl:h-[56px]">
+                <Image
+                  fill
+                  sizes="10vh"
+                  className="w-full h-full object-contain"
+                  alt="brands"
+                  src="/assets/brands.png"
+                />
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 }
