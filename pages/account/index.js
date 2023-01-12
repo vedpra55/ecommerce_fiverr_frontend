@@ -22,7 +22,7 @@ export default function AccountPage() {
         <Breadcrumbs text={"Хлебные крошки"} />
         {isLoading ? (
           <div className=" text-center">Loading...</div>
-        ) : user?.name ? (
+        ) : user ? (
           <UserDashboard user={user} logout={logout} />
         ) : (
           <UnAuthenticatedProfile

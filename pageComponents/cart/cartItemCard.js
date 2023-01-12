@@ -32,9 +32,10 @@ export default function CartItemCard({ item }) {
       >
         <AiOutlineClose className="text-[#EE4932] text-2xl" />
       </button>
-      <Link href={`/${item.productId}?brand=${item.brand}`}>
-        <div className="  grid grid-cols-12 gap-x-3">
-          <div className="col-span-4">
+
+      <div className="  grid grid-cols-12 gap-x-3">
+        <div className="col-span-4">
+          <Link href={`/${item.productId}?brand=${item.brand}`}>
             <div className="relative w-full h-40">
               <Image
                 fill
@@ -44,33 +45,34 @@ export default function CartItemCard({ item }) {
                 alt={item.name}
               />
             </div>
+          </Link>
+        </div>
+        <div className="col-span-8 gap-y-2 w-full flex flex-col items-start justify-start">
+          <p>{item.name}</p>
+          <div className="flex items-center gap-x-5">
+            <p className="text-xs line-through">{adaptPrice(item.price)} ₽</p>
+            <p>{adaptPrice(item.itemTotal)} ₽</p>
           </div>
-          <div className="col-span-8 gap-y-2 w-full flex flex-col items-start justify-start">
-            <p>{item.name}</p>
-            <div className="flex items-center gap-x-5">
-              <p className="text-xs line-through">{adaptPrice(item.price)} ₽</p>
-              <p>{adaptPrice(item.itemTotal)} ₽</p>
-            </div>
-            <p>Размер: {item.selectedSize}</p>
+          <p>Размер: {item.selectedSize}</p>
 
-            <div className="flex gap-x-4  items-start">
-              <div
-                onClick={() => handleQty("minus")}
-                className="border rounded-lg p-1 cursor-pointer"
-              >
-                <AiOutlineMinus />
-              </div>
-              <p>{item.quantity}</p>
-              <div
-                onClick={() => handleQty("plus")}
-                className="border rounded-lg p-1 cursor-pointer"
-              >
-                <AiOutlinePlus />
-              </div>
+          <div className="flex gap-x-4  items-start">
+            <div
+              onClick={() => handleQty("minus")}
+              className="border rounded-lg p-1 cursor-pointer"
+            >
+              <AiOutlineMinus />
+            </div>
+            <p>{item.quantity}</p>
+            <div
+              onClick={() => handleQty("plus")}
+              className="border rounded-lg p-1 cursor-pointer"
+            >
+              <AiOutlinePlus />
             </div>
           </div>
         </div>
-      </Link>
+      </div>
+
       <div className="border-[1px] border-[#EAEAEA] col-span-12 w-full my-5 "></div>
     </div>
   );

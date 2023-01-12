@@ -84,7 +84,7 @@ export default function ProductInfo({ product }) {
           <p>{`(${"5"})`}</p>
         </div>
       </div>
-      <div className="mt-[15px] flex gap-x-10 items-center">
+      <div className="mt-[15px] flex-wrap gap-y-2 flex gap-x-10 items-center">
         <p>Артикул: {product.data.id}</p>
         <p>
           Бренд: <span className="pl-1">{product.data.productBrand}</span>

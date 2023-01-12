@@ -80,7 +80,7 @@ export default function MainCategoriesOption({ isToggle, setToggle }) {
           <div key={i} className="py-1 flex gap-x-3 items-center">
             <input
               checked={
-                selectedMainCategory && selectedMainCategory.includes(item)
+                selectedMainCategory && selectedMainCategory?.includes(item)
               }
               value={item}
               onChange={handleChange}

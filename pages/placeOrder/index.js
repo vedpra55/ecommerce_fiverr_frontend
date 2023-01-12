@@ -54,7 +54,7 @@ export default function PlaceOrderPage() {
 
   if (!isClient) return null;
   if (isLoading) return null;
-  if (!user.address?.zipCode) return null;
+  if (!user?.address?.zipCode) return null;
 
   return (
     <main>

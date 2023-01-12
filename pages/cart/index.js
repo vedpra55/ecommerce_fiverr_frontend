@@ -46,8 +46,8 @@ export default function CartPage() {
   const [isOpen, setIsOpen] = useState(false);
 
   function PlaceOrder() {
-    if (user?.name) {
-      if (!user.address.zipCode) {
+    if (user) {
+      if (!user?.address?.zipCode) {
         setIsOpen(true);
       } else {
         router.push("/placeOrder");

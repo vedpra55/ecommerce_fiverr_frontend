@@ -117,7 +117,7 @@ export default function ProductCard({ product }) {
           )}
         </div>
       </div>
-      {product.productDetails.sizes.length !== 0 && isOpen && (
+      {product?.productDetails?.sizes?.length !== 0 && isOpen && (
         <SizeModal
           selectSize={selectedSize}
           setSelectedSize={setSelectedSize}

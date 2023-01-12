@@ -65,7 +65,7 @@ export default function ProductContainer() {
 
   useEffect(() => {
     const pageCount = (data?.total / 12).toFixed(0);
-    setPageCount(pageCount);
+    setPageCount(Math.ceil(pageCount));
   }, [data]);
 
   useEffect(() => {
@@ -121,23 +121,25 @@ export default function ProductContainer() {
           </div>
         )}
       </div>
-      <div className="flex">
-        <ReactPaginate
-          breakLabel="..."
-          nextLabel="next >"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={10}
-          initialPage={currentPage}
-          pageCount={pageCount}
-          previousLabel="< previous"
-          renderOnZeroPageCount={null}
-          containerClassName="paginationContainer"
-          pageClassName="page-item"
-          activeClassName="selected-page"
-          previousClassName="toggle-item"
-          nextClassName="toggle-item"
-        />
-      </div>
+      {data?.total && (
+        <div className="flex">
+          <ReactPaginate
+            breakLabel="..."
+            nextLabel="next >"
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={10}
+            initialPage={currentPage}
+            pageCount={pageCount}
+            previousLabel="< previous"
+            renderOnZeroPageCount={null}
+            containerClassName="paginationContainer"
+            pageClassName="page-item"
+            activeClassName="selected-page"
+            previousClassName="toggle-item"
+            nextClassName="toggle-item"
+          />
+        </div>
+      )}
     </div>
   );
 }

@@ -99,7 +99,7 @@ export default function ProductImages({ images, name }) {
         </Swiper>
       </div>
       <Modal isOpen={isOpen} setIsOpen={setOpen}>
-        <div className=" w-[30rem] h-[50rem]">
+        <div className="w-80 h-[35rem] overflow-hidden md:w-[30rem] md:h-[50rem]">
           <div className=" relative w-full h-full">
             <Image
               className="w-full  h-full object-cover border rounded-lg"
