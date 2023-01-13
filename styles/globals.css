@@ -119,13 +119,16 @@
   @apply border p-1 rounded-md border-main btnHover hover:text-white disabled:bg-gray-400;
 }
 
+.swiper-button-prev::after,
 .swiper-button-next::after {
-  color: #1c8bca;
   opacity: 50;
-  z-index: 50;
-}
-
-.swiper-button-prev::after {
-  color: #1c8bca;
-  opacity: 50;
+  font-size: 10px !important;
+  color: white;
+  background-color: #1c8bca;
+  width: 60px;
+  height: 30px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
