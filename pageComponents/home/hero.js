@@ -32,7 +32,7 @@ export default function Hero() {
               <p>Пример видеоотчета</p>
             </div>
             <p>Топовые бренды:</p>
-            <div className="flex w-[90%] md:w-96   flex-wrap sm:flex-nowrap gap-y-2 gap-x-2 lg:gap-x-5 items-center py-2">
+            <div className="flex w-[90%] md:w-96 3xl:w-[30rem]  flex-wrap sm:flex-nowrap gap-y-2 gap-x-2 lg:gap-x-5 items-center py-2">
               <BrandsSwiper />
             </div>
             <button className="border btnHover  lg:w-[289px] lg:h-[52px] border-main text-white px-10 mt-4 py-2 rounded-[90px]">
@@ -88,7 +88,7 @@ function BrandsSwiper() {
         <SwiperSlide key={i} className="slide">
           <div className="slide-content">
             <div className="border border-white rounded-md px-5">
-              <div className=" relative  w-14 h-8 md:w-20 md:h-12 3xl:w-[136px] 3xl:h-[56px]">
+              <div className=" relative  w-14 h-8 md:w-20 md:h-12 3xl:w-[116px] 3xl:h-[36px]">
                 <Image
                   fill
                   sizes="10vh"

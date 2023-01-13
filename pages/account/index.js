@@ -3,7 +3,7 @@ import { useState } from "react";
 import { NavBar, Footer, Breadcrumbs } from "../../components";
 
 import { useAuthContext } from "../../context/authContext";
-import { useLogout } from "../../hooks/useLogout";
+import { useAuthHooks } from "../../hooks/authHooks";
 import RegisterModal from "../../components/Modal/registerUserModal";
 import LoginModal from "../../components/Modal/loginModal";
 import UserDashboard from "../../pageComponents/account/userDashboard";
@@ -13,7 +13,7 @@ export default function AccountPage() {
   const [isRegisterModal, setRegisterModal] = useState(false);
   const [isLoginModal, setLoginModal] = useState(false);
   const { isLoading, user } = useAuthContext();
-  const { logout } = useLogout();
+  const { logout } = useAuthHooks();
 
   return (
     <main>
@@ -22,7 +22,7 @@ export default function AccountPage() {
         <Breadcrumbs text={"Хлебные крошки"} />
         {isLoading ? (
           <div className=" text-center">Loading...</div>
-        ) : user ? (
+        ) : user?.name ? (
           <UserDashboard user={user} logout={logout} />
         ) : (
           <UnAuthenticatedProfile

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useProfileEdit } from "../../hooks/useProfileEdit";
+import { useAuthHooks } from "../../hooks/authHooks";
 
 export default function ProfileEdit({ user }) {
   const fields = [
@@ -63,7 +63,7 @@ export default function ProfileEdit({ user }) {
     },
   ];
   const { register, handleSubmit, reset } = useForm();
-  const { profileEdit, isLoading, error } = useProfileEdit();
+  const { profileEdit, isLoading, error } = useAuthHooks();
 
   const defaulValue = {
     name: user.name,

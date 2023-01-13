@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import Modal from "./modal";
-import { useSignup } from "../../hooks/useSignup";
+import { useAuthHooks } from "../../hooks/authHooks";
 
 export default function RegisterUserModal({ isOpen, setIsOpen }) {
   const fields = [
@@ -47,7 +47,7 @@ export default function RegisterUserModal({ isOpen, setIsOpen }) {
     },
   ];
   const { register, handleSubmit } = useForm();
-  const { signup, error, isLoading } = useSignup();
+  const { signup, error, isLoading } = useAuthHooks();
 
   async function handleRegister(data) {
     const userData = {
