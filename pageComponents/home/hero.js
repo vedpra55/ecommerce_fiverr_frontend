@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import { FaTelegramPlane } from "react-icons/fa";
 import { BsPlayFill } from "react-icons/bs";
 
-import { SlArrowRight } from "react-icons/sl";
-
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -13,14 +11,6 @@ import "swiper/css/pagination";
 
 export default function Hero() {
   const [buttonHover, setHover] = useState(false);
-  const [currentSlice, setCurrentSlice] = useState(0);
-
-  const data = [
-    "/assets/brands.png",
-    "/assets/brand2.png",
-    "/assets/brand3.png",
-    "/assets/brand4.png",
-  ];
 
   return (
     <section className="w-full h-full ">
