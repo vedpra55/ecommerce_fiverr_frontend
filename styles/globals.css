@@ -152,8 +152,8 @@
 .swiper-button-prev:active::after,
 .swiper-button-next:active::after {
   color: white;
-  background: #0f6ea4;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
+  background: #0f6ea4 !important;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35) !important;
 }
 
 .swiper-button-prev:hover::after,
