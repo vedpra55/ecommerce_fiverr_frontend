@@ -46,7 +46,12 @@ export default function PlaceOrderPage() {
       if (!user?.name) {
         router.push("/account");
       }
-      if (!user?.address?.zipCode) {
+      if (
+        !user?.address?.zipCode ||
+        !user?.address?.city ||
+        !user?.address?.state ||
+        !user?.address?.landMark
+      ) {
         router.push("/account");
       }
     }
@@ -54,7 +59,13 @@ export default function PlaceOrderPage() {
 
   if (!isClient) return null;
   if (isLoading) return null;
-  if (!user?.address?.zipCode) return null;
+  if (
+    !user?.address?.zipCode ||
+    !user?.address?.city ||
+    !user?.address?.state ||
+    !user?.address?.landMark
+  )
+    return null;
 
   return (
     <main>

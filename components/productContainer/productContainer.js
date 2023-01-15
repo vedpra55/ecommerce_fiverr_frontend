@@ -15,7 +15,7 @@ export default function ProductContainer({ products, title, brand }) {
           </p>
         </Link>
       </div>
-      <div className="grid grid-cols-12 gap-3 gap-y-5 md:gap-5 3xl:gap-[27px] mt-4 md:mt-[29px]">
+      <div className="grid grid-cols-12 gap-x-3 gap-y-5 md:gap-5 3xl:gap-[27px] mt-4 md:mt-[29px]">
         {products?.map((item) => (
           <div
             className="col-span-6 md:col-span-4 lg:col-span-3"

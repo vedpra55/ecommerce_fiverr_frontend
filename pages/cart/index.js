@@ -47,7 +47,12 @@ export default function CartPage() {
 
   function PlaceOrder() {
     if (user) {
-      if (!user?.address?.zipCode) {
+      if (
+        !user?.address?.zipCode ||
+        !user?.address?.city ||
+        !user?.address?.state ||
+        !user?.address?.landMark
+      ) {
         setIsOpen(true);
       } else {
         router.push("/placeOrder");

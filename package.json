@@ -26,6 +26,7 @@
     "react-loader-spinner": "^5.3.4",
     "react-paginate": "^8.1.4",
     "react-radio-group": "^3.0.3",
+    "react-responsive": "^9.0.2",
     "react-use-cart": "^1.13.0",
     "sharp": "^0.31.3",
     "swiper": "^8.4.5",

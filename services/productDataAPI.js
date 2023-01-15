@@ -29,6 +29,9 @@ export async function fetchSimilarProducts(arg) {
   const data = {
     mainCategory: product.data.productDetails.mainCategories[0],
     category: product.data.productDetails.mainCategories[1],
+    subCategory:
+      product.data.productBrand === "h&m" &&
+      product.data.productDetails.mainCategories[2],
     brand: product.data.productBrand,
     productId: id,
   };

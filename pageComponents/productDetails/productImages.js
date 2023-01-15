@@ -3,7 +3,6 @@ import Image from "next/image";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";

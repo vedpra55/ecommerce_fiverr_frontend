@@ -64,11 +64,11 @@ export default function CartItemTable({ item }) {
       </div>
       <div className="col-span-2 relative">
         <p>{adaptPrice(item.itemTotal)} ₽</p>
-        <button
-          onClick={handleRemoveProduct}
-          className="absolute cursor-pointer inset-0 flex justify-end"
-        >
-          <AiOutlineClose className="text-[#EE4932] text-2xl" />
+        <button className="absolute  inset-0 flex justify-end">
+          <AiOutlineClose
+            onClick={handleRemoveProduct}
+            className="text-[#EE4932] text-2xl cursor-pointer"
+          />
         </button>
       </div>
       <div className="border-[1px] border-[#EAEAEA] col-span-12 w-full my-5 "></div>

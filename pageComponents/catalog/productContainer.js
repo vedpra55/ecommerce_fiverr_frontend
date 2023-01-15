@@ -97,7 +97,7 @@ export default function ProductContainer() {
           <option id={"-totalSales"} label="Most Sales" value={2} />
         </select>
       </div>
-      <div className="grid grid-cols-12 gap-x-5 gap-y-5 mt-[15px]">
+      <div className="grid grid-cols-12 gap-x-3 md:gap-x-5 gap-y-5 mt-[15px]">
         {data?.data ? (
           data.data.map((item) => (
             <div className="col-span-6 lg:col-span-4" key={item._id}>

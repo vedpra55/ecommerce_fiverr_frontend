@@ -15,6 +15,7 @@ import {
 import { Oval } from "react-loader-spinner";
 import ProductImages from "../../pageComponents/productDetails/productImages";
 import ProductInfo from "../../pageComponents/productDetails/productInfo";
+import SimilarProducts from "../../pageComponents/productDetails/similarProducts";
 
 export default function ProductDetailsPage() {
   const router = useRouter();
@@ -60,10 +61,7 @@ export default function ProductDetailsPage() {
           />
           <ProductInfo product={product} />
         </div>
-        <ProductContainer
-          products={similarProducts?.data}
-          title="Похожие товары"
-        />
+        {similarProducts && <SimilarProducts products={similarProducts} />}
       </section>
       <ContactUs />
       <Footer noMargin={true} />
